@@ -1,0 +1,14 @@
+{
+  "name": "mailbox",
+  "version": "0.0.1",
+  "description": "AngularJS App (LearnJavascript course)",
+  "main": "gulpfile.js",
+  "author": "Kira Shatulova",
+  "license": "ISC",
+  "devDependencies": {
+    "gulp": "^3.9.0",
+    "gulp-concat": "^2.6.0",
+    "gulp-uglify": "^1.4.2",
+    "gulp-webserver": "^0.9.1"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "name": "mailbox",
+  "version": "0.0.1",
+  "homepage": "",
+  "authors": [
+    "KiraShubik <kira.shubik@gmail.com>"
+  ],
+  "license": "MIT",
+  "devDependencies": {
+    "angular": "1.5.5",
+    "bootstrap": "3.3.5"
+  }
+}
