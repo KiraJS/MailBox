@@ -1,0 +1,13 @@
+<li class="list-group-item">
+  <b>{{$ctrl.mail.sender}}</b>
+  <span>{{$ctrl.mail.theme}}</span>
+  <span class="pull-right" style="cursor:pointer;" ng-click="showLetter=!showLetter">
+      <span class="glyphicon glyphicon-eye-open" style="margin-left: 5px;" ng-show="!showLetter"></span>
+  <span class="glyphicon glyphicon-remove" style="margin-left: 5px;" ng-show="showLetter"></span>
+  </span>
+  <div class="panel panel-default" ng-if="showLetter">
+    <div class="panel-body">
+      {{$ctrl.mail.letter}}
+    </div>
+  </div>
+</li>

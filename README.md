@@ -1,2 +1,5 @@
-# FitnessTracker
-AngularJS App (loftschool course)
+# mailBoxApp
+AngularJS App (LearnJS course)
+
+npm i
+bower i

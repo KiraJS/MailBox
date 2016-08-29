@@ -13,7 +13,10 @@ gulp.task('js',function(){
     .pipe(concat('app.js'))
     .pipe(gulp.dest('builds/dev'));
   gulp.src([
-      'bower_components/angular/angular.js'
+      'bower_components/angular/angular.js',
+      'bower_components/angular-ui-router/release/angular-ui-router.js',
+      'bower_components/firebase/firebase.js',
+      'bower_components/angularfire/dist/angularfire.js'
     ])
     .pipe(concat('libs.js'))
     .pipe(gulp.dest('builds/dev'));
@@ -24,10 +27,10 @@ gulp.task('css', function(){
     .pipe(concat('app.css'))
     .pipe(gulp.dest('builds/dev'));
   gulp.src([
-      'bower_components/bootstrap/dist/css/bootstrap.css'
-    ])
-    .pipe(concat('theme.css'))
-    .pipe(gulp.dest('builds/dev'));
+    'bower_components/bootstrap/dist/css/bootstrap.css',
+  ])
+  .pipe(concat('theme.css'))
+  .pipe(gulp.dest('builds/dev'));
 })
 
 gulp.task('watch', function(){
@@ -40,8 +43,13 @@ gulp.task('webserver', function(){
     .pipe(webserver({
       livereload: true,
       open: true,
-      port: 8034,
+      port: 8035,
     }));
+})
+
+gulp.task('prod', function(){
+  gulp.src('builds/dev/**/*')
+    .pipe(gulp.dest('builds/public/'));
 })
 
 gulp.task('default', [
