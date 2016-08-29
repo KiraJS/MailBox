@@ -16,7 +16,6 @@ angular.module('mailBoxApp')
     this.mails = $firebaseArray(mailsRef);
     var outgoingRef = ref.child('outgoing');
     this.outgoing = $firebaseArray(outgoingRef);
-    console.log(this.outgoing)
   })
   .component('incomingBox', {
     templateUrl: '/app/mailbox/incomingBox.html',
@@ -34,7 +33,6 @@ angular.module('mailBoxApp')
     templateUrl: '/app/mailbox/outgoingBox.html',
     controller: function(MailService) {
       this.outgoing = MailService.outgoing;
-      console.log('component', this.outgoing);
     }
   })
   .component('outgoingLetter', {
@@ -43,7 +41,8 @@ angular.module('mailBoxApp')
       outgoing: '<'
     },
   })
-  .config(function($stateProvider){
+  .config(function($stateProvider, $urlRouterProvider){
+    $urlRouterProvider.otherwise('/incoming');
     $stateProvider
     .state('incoming', {
       url: "/incoming",

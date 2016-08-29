@@ -1,15 +1,18 @@
-<form name="sendForm">
+<form name="sendForm" ng-submit="$ctrl.saveLetter()" ng-show="$ctrl.show">
   <div class="form-group">
     <label for="email">Email</label>
-    <input type="email" class="form-control" id="email" placeholder="example@gmail.com" required>
+    <input type="email" class="form-control" id="email" placeholder="example@gmail.com" required ng-model="$ctrl.newLetter.recipient">
   </div>
   <div class="form-group">
     <label for="theme">Тема</label>
-    <input type="password" class="form-control" id="theme" required>
+    <input type="text" class="form-control" id="theme" required ng-model="$ctrl.newLetter.theme">
   </div>
   <div class="form-group">
     <label for="text">Текст письма</label>
-    <textarea class="form-control" id="text" rows="3" required></textarea>
+    <textarea class="form-control" id="text" rows="3" required ng-model="$ctrl.newLetter.text"></textarea>
   </div>
   <button type="submit" class="btn btn-success">Отправить</button>
 </form>
+<div class="alert alert-success" ng-hide="$ctrl.show">
+  <a ui-sref="incoming" class="alert-link">Ура! Ваше письмо героическими усилиями отправлено!</a>
+</div>
